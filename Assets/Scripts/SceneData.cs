@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class SceneData : MonoBehaviour
 {
-public string name = "";
-public int score = 0;
-public bool fromGame = false;
+    public string name = "";
+    public int score = 0;
+    public bool fromGame = false;
 
-void Start()
-{
-if(GameObject.FindGameObjectsWithTag("persistent").Length > 1) {
-Destroy(this);
-}
-DontDestroyOnLoad(this.gameObject);
-}
+    void Start()
+    {
+        if(GameObject.FindGameObjectsWithTag("persistent").Length > 1) {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 }
