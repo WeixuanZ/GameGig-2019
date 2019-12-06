@@ -7,24 +7,25 @@ using UnityEngine.Audio;
 
 public class MouseOverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public ParticleSystem system;
+
     public AudioClip menuNoise;
     public AudioSource musicSource;
 
+
     void Start()
     {
-        system.Stop();
         musicSource.clip = menuNoise;
+        gameObject.GetComponent<Image>().color = new Color(0f, 255f, 255f, 0f);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        system.Play();
         musicSource.Play();
+        gameObject.GetComponent<Image>().color = new Color(0f, 255f, 255f, 1f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        system.Stop();
+        gameObject.GetComponent<Image>().color = new Color(0f, 255f, 255f, 0f);
     }
 }
