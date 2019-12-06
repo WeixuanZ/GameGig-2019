@@ -295,7 +295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game name
+  m_text: Space Dash
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1bf0b83e9550f1e4599519b94d487428, type: 2}
   m_sharedMaterial: {fileID: 3392547574825305191, guid: 1bf0b83e9550f1e4599519b94d487428,
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 256724256}
-    characterCount: 9
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
