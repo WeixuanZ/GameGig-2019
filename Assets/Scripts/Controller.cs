@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour
         if(bulletsSpawned)
         {
             countdown -= Time.deltaTime * difficulty;
-            if(countdown < -(3-countdownNumber))
+            if(countdown < -2)
             {
                 if (countdownNumber > -3)
                 {
@@ -54,6 +54,7 @@ public class Controller : MonoBehaviour
         }
         else
         {
+            countdownNumber = 0;
             bulletsSpawned = true;
             SpawnBullets(5);
             countdown = bulletMoveTime;
