@@ -32,7 +32,7 @@ public class Controller : MonoBehaviour
         countdown -= Time.deltaTime * difficulty;
         if (bulletsSpawned)
         {
-            if(countdown < -2 + countdownNumber)
+            if(countdown < -2 + countdownNumber && !isDead)
             {
                 if (countdownNumber > -3)
                 {
