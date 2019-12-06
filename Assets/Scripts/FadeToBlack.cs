@@ -35,7 +35,7 @@ public class FadeToBlack : MonoBehaviour
 
     IEnumerator LoadScoreboard()
     {
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Scoreboard", LoadSceneMode.Single);
     }
 }
