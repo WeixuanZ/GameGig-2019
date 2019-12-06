@@ -13,6 +13,9 @@ public class ChangeScene : MonoBehaviour
 
     void Transition()
     {
-        SceneManager.LoadScene(this.ChangeTo, LoadSceneMode.Single);
+        if (ChangeTo == "Exit")
+            Application.Quit();
+        else
+            SceneManager.LoadScene(this.ChangeTo, LoadSceneMode.Single);
     }
 }
