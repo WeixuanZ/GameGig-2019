@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scoreboard.unity
     guid: 21acbafe85fdc2d4a85a1befccdbd756
+  - enabled: 1
+    path: Assets/Scenes/About.unity
+    guid: 15c262dae321f124ca40fba8d8a45fbf
   m_configObjects: {}
