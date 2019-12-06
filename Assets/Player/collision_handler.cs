@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Audio;
 
 public class collision_handler : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class collision_handler : MonoBehaviour
     public Image FadeImage;
     public TextMeshProUGUI FadeText;
 
+    private AudioSource SFXSource;
+
+    void Start()
+    {
+        SFXSource = this.GetComponent<AudioSource>();
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         /*
@@ -24,6 +32,7 @@ public class collision_handler : MonoBehaviour
 
         BodyHandle.constraints = RigidbodyConstraints2D.FreezeAll;
         ExplosionHandle.Play();
+        SFXSource.Play();
 
         StartCoroutine(FlashShip());
         StartCoroutine(DelayFade());
