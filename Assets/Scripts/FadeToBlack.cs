@@ -13,7 +13,7 @@ public class FadeToBlack : MonoBehaviour
     {
         img = GetComponent<Image>();
         img.color = Color.clear;
-
+    
         GetComponent<RectTransform>().localScale = new Vector2(Screen.width, Screen.height);
     }
 

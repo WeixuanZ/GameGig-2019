@@ -491,13 +491,14 @@ GameObject:
   - component: {fileID: 988784536}
   - component: {fileID: 988784538}
   - component: {fileID: 988784537}
+  - component: {fileID: 988784539}
   m_Layer: 5
   m_Name: YouDied
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &988784536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -545,8 +546,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -679,6 +680,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &988784539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988784535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152a747b196d0824a8464f53845e417c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeSpeed: 2
 --- !u!1 &1239160499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1038,11 @@ PrefabInstance:
       propertyPath: FadeSpeed
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2335168484406404060, guid: 82000f563f35c124f99fff44cc26bc75,
+        type: 3}
+      propertyPath: FadeText
+      value: 
+      objectReference: {fileID: 988784537}
     - target: {fileID: 2335168485250441272, guid: 82000f563f35c124f99fff44cc26bc75,
         type: 3}
       propertyPath: m_LocalPosition.x

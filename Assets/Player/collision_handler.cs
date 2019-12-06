@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class collision_handler : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class collision_handler : MonoBehaviour
     public Controller controller;
 
     public Image FadeImage;
+    public TextMeshProUGUI FadeText;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,7 +25,9 @@ public class collision_handler : MonoBehaviour
         ExplosionHandle.Play();
 
         StartCoroutine(FlashShip());
+        StartCoroutine(DelayFade());
         FadeImage.GetComponent<FadeToBlack>().enabled = true;
+        
         controller.isDead = true;
     }
 
@@ -36,5 +40,11 @@ public class collision_handler : MonoBehaviour
         }
 
         SpriteHandle.enabled = false;
+    }
+
+    IEnumerator DelayFade()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FadeText.GetComponent<FadeToWhite>().enabled = true;
     }
 }
