@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class typeText : MonoBehaviour
 {
+    public getScores scoreDrawer;
+    public string currentString = "";
     // Start is called before the first frame update
-    void Start()
-    {
-        this.GetComponent<InputField>().onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-        this.GetComponent<InputField>().ActivateInputField();
-        this.GetComponent<InputField>().Select();
-    }
 
-
-    public void ValueChangeCheck()
+    void Update()
     {
-        Debug.Log("Hello");
+        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(vKey))
+            {
+                if(vKey.ToString().Length == 1)
+                {
+                    currentString += vKey.ToString();
+                }
+                if(vKey.ToString() == "Backspace" && currentString.Length > 0)
+                {
+                    currentString = currentString.Substring(0, currentString.Length - 1);
+                }
+                scoreDrawer.UpdateScoreboard();
+            }
+        }
     }
 }
