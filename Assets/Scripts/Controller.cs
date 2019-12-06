@@ -69,8 +69,8 @@ public class Controller : MonoBehaviour
 
     void SpawnBullets(int count)
     {
-        Vector3 top = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1, 10));
-        Vector3 bottom = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0, 10));
+        Vector3 top = cam.ViewportToWorldPoint(new Vector3(1, 1, 10));
+        Vector3 bottom = cam.ViewportToWorldPoint(new Vector3(0, 0, 10));
 
         for(int i=0; i<count; i++)
         {
