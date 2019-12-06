@@ -20,7 +20,7 @@ public class typeText : MonoBehaviour
                     currentString = currentString.Substring(0, currentString.Length - 1);
                 }
 
-                if (currentString.Length > 9)
+                if (currentString.Length > 8)
                 {
                     continue;
                 }

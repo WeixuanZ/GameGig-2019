@@ -17,12 +17,18 @@ public class getScores : MonoBehaviour
     {
         sceneData = GameObject.FindGameObjectWithTag("persistent").GetComponent<SceneData>();
         playerScores = GetAllPlayerData();
-        for(int i = 0; i < 5; i++)
+
+        FlashText[] namesFlash = names.GetComponentsInChildren<FlashText>();
+        FlashText[] scoresFlash = scores.GetComponentsInChildren<FlashText>();
+
+        for (int i = 0; i < 5; i++)
         {
             if(playerScores[i].score <= sceneData.score)
             {
+                namesFlash[i].enabled = true;
+                scoresFlash[i].enabled = true;
                 scoreIndex = i;
-                playerScores.Insert(i, new PlayerData("___", sceneData.score));
+                playerScores.Insert(i, new PlayerData("???", sceneData.score));
                 break;
             }
         }
@@ -40,6 +46,10 @@ public class getScores : MonoBehaviour
             if(i==scoreIndex)
             {
                 playerScores[i].name = input.currentString;
+                if (input.currentString.Length == 0)
+                {
+                    playerScores[i].name = "???";
+                }
             }
             namesText[i].text = playerScores[i].name;
             scoresText[i].text = playerScores[i].score.ToString();
