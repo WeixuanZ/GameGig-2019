@@ -155,8 +155,8 @@ Camera:
   m_GameObject: {fileID: 184056326}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -203,6 +203,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &225419971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225419973}
+  - component: {fileID: 225419972}
+  m_Layer: 0
+  m_Name: StarGen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &225419972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225419971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345d23bf74e09cc40aeb02dd320df23a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starPre: {fileID: 4413159373051858466, guid: 0fcecad27c043df4e99d90f85f3a146a, type: 3}
+  cam: {fileID: 184056328}
+--- !u!4 &225419973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225419971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5093492, y: -1.2513762, z: -3715.5132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706039838
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 184056328}
   countdownUI: {fileID: 954154839}
-  bulletPre: {fileID: 4782166103950709322, guid: eedc7190e4fd9324793643e97a86bfe8,
+  bulletPre: {fileID: 6843095470713939573, guid: eedc7190e4fd9324793643e97a86bfe8,
     type: 3}
   bullets: []
   difficulty: 2
@@ -305,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b4086bb7527de41b43e56964706a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brightness: 0
+  brightness: 1
 --- !u!114 &954154840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +708,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335168485250441272, guid: 82000f563f35c124f99fff44cc26bc75,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335168485250441272, guid: 82000f563f35c124f99fff44cc26bc75,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2335168485250441272, guid: 82000f563f35c124f99fff44cc26bc75,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2335168485250441273, guid: 82000f563f35c124f99fff44cc26bc75,
         type: 3}

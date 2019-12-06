@@ -32,7 +32,6 @@ public class Controller : MonoBehaviour
         {
             if(countdown < -2 + countdownNumber)
             {
-                Debug.Log(countdownNumber);
                 if (countdownNumber > -3)
                 {
                     countdownUI.ShowText((3 + countdownNumber).ToString(), 5);
