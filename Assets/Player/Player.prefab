@@ -4876,7 +4876,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3010368, y: 1.6301105}
+  m_Size: {x: 2.3, y: 1.8}
   m_EdgeRadius: 0
 --- !u!114 &2335168484406404060
 MonoBehaviour:
@@ -4893,6 +4893,9 @@ MonoBehaviour:
   ExplosionHandle: {fileID: 8152559484826904082}
   BodyHandle: {fileID: 2335168484766438891}
   SpriteHandle: {fileID: 2335168485201851958}
+  controller: {fileID: 0}
+  FadeImage: {fileID: 0}
+  FadeText: {fileID: 0}
 --- !u!1 &2335168484766438677
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,7 +5036,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f765e896a5453264aa285c8a5796200b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d6dff4bb0c35d4c499d15536c5519ac1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
