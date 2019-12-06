@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
-    public float FadeSpeed = 1.5f;
+    public float FadeSpeed = 2f;
 
     private Image img;
 
