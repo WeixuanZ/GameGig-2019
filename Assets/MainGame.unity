@@ -133,11 +133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1251
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.0918708
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -179,6 +179,14 @@ PrefabInstance:
       propertyPath: TrailModule.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
+      propertyPath: TrailModule.mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -186,7 +194,7 @@ PrefabInstance:
     - target: {fileID: 19900000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: cb692e734bb8e334081dbc8e4527346c, type: 2}
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
 --- !u!1 &184056326
