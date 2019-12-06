@@ -8,17 +8,14 @@ public class typeText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<InputField>().onValueChanged.AddListener(ValueChangeCheck);
+        this.GetComponent<InputField>().onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         this.GetComponent<InputField>().ActivateInputField();
         this.GetComponent<InputField>().Select();
+        this.GetComponent<InputField>().navigation 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void ValueChangeCheck(string input)
+
+    public void ValueChangeCheck()
     {
         Debug.Log("Hello");
     }
