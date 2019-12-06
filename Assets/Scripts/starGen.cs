@@ -39,7 +39,7 @@ public class starGen : MonoBehaviour
                 stars.RemoveAt(i);
                 starDist.RemoveAt(i);
             }
-            stars[i].transform.position -= new Vector3(starDist[i] * starDist[i], 0, 0);
+            stars[i].transform.position -= new Vector3(starDist[i] * starDist[i], 0, 0)*Time.deltaTime*30;
         }
     }
 }

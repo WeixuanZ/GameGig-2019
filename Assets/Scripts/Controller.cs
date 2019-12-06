@@ -13,6 +13,8 @@ public class Controller : MonoBehaviour
 
     public float innerRect;
 
+    public bool isDead = false;
+    public int score = 0;
     public float bulletSpeed = 0;
     public float bulletMoveTime;
     float countdown;
@@ -46,8 +48,9 @@ public class Controller : MonoBehaviour
                 }
                 countdownNumber--;
             }
-            if(countdown < -10)
+            if(countdown < -10 && !isDead)
             {
+                score++;
                 countdownUI.ShowText("Passed!", 5);
                 DespawnBullets();
                 bulletsSpawned = false;
@@ -59,7 +62,7 @@ public class Controller : MonoBehaviour
             }
             bulletSpeed = SpeedCurve(countdown)*30;
         }
-        else if(countdown<0)
+        else if(countdown<0 && !isDead)
         {
             countdownNumber = 0;
             bulletsSpawned = true;

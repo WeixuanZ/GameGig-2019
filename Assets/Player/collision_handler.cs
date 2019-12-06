@@ -7,6 +7,8 @@ public class collision_handler : MonoBehaviour
     public ParticleSystem ExplosionHandle;
     public Rigidbody2D BodyHandle;
     public SpriteRenderer SpriteHandle;
+    public Controller controller;
+
     public Image FadeImage;
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -22,6 +24,7 @@ public class collision_handler : MonoBehaviour
 
         StartCoroutine(FlashShip());
         FadeImage.GetComponent<FadeToBlack>().enabled = true;
+        controller.isDead = true;
     }
 
     IEnumerator FlashShip()
