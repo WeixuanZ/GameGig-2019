@@ -35,6 +35,8 @@ public class Controller : MonoBehaviour
         datapass = GameObject.FindGameObjectWithTag("persistent").GetComponent<SceneData>();
         datapass.fromGame = true;
         datapass.score = 0;
+
+        datapass.GetComponent<AudioSource>().Pause();
     }
 
     void Update()

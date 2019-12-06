@@ -11,6 +11,9 @@ public class fadeFromBlack : MonoBehaviour
     {
         img = this.GetComponent<Image>();
         img.color = Color.black;
+
+        SceneData datapass = GameObject.FindGameObjectWithTag("persistent").GetComponent<SceneData>();
+        datapass.GetComponent<AudioSource>().Play();
     }
 
     void Update()
