@@ -75,7 +75,7 @@ public class Controller : MonoBehaviour
         {
             countdownNumber = 0;
             bulletsSpawned = true;
-            SpawnBullets(Mathf.FloorToInt(5+difficulty*3));
+            SpawnBullets(Mathf.FloorToInt(2+difficulty*2));
             countdown = bulletMoveTime;
             bulletSpeed = SpeedCurve(countdown) * 30;
         }
