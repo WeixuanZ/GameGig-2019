@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 2335168484766438891}
   Collider: {fileID: 2335168484406404061}
-  Margin: 0
+  Margin: 0.1
 --- !u!1 &2335168485201851952
 GameObject:
   m_ObjectHideFlags: 0
