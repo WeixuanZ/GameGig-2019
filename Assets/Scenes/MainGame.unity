@@ -637,6 +637,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988784535}
   m_CullTransparentMesh: 0
+--- !u!114 &988784539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988784535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152a747b196d0824a8464f53845e417c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeSpeed: 2
 --- !u!1 &1047725275
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,19 +693,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &988784539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988784535}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152a747b196d0824a8464f53845e417c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadeSpeed: 2
 --- !u!1 &1239160499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1043,11 @@ PrefabInstance:
       propertyPath: FadeText
       value: 
       objectReference: {fileID: 988784537}
+    - target: {fileID: 2335168484406404060, guid: 82000f563f35c124f99fff44cc26bc75,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 706039840}
     - target: {fileID: 2335168485250441272, guid: 82000f563f35c124f99fff44cc26bc75,
         type: 3}
       propertyPath: m_LocalPosition.x

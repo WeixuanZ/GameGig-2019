@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class collision_handler : MonoBehaviour
@@ -26,6 +27,7 @@ public class collision_handler : MonoBehaviour
 
         StartCoroutine(FlashShip());
         StartCoroutine(DelayFade());
+        StartCoroutine(LoadScoreboard());
         FadeImage.GetComponent<FadeToBlack>().enabled = true;
         
         controller.isDead = true;
@@ -46,5 +48,11 @@ public class collision_handler : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         FadeText.GetComponent<FadeToWhite>().enabled = true;
+    }
+
+    IEnumerator LoadScoreboard()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Scoreboard", LoadSceneMode.Single);
     }
 }
