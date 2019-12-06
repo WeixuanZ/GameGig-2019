@@ -14,9 +14,10 @@ public class Controller : MonoBehaviour
     public float innerRect;
 
     public bool isDead = false;
-    public int score = 0;
     public float bulletSpeed = 0;
     public float bulletMoveTime;
+
+    SceneData datapass;
     float countdown;
     int countdownNumber = 0;
     bool bulletsSpawned = false;
@@ -24,6 +25,10 @@ public class Controller : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
+
+        datapass = GameObject.FindGameObjectWithTag("persistent").GetComponent<SceneData>();
+        datapass.fromGame = true;
+        datapass.score = 0;
     }
 
     // Update is called once per frame
@@ -50,7 +55,7 @@ public class Controller : MonoBehaviour
             }
             if(countdown < -10 && !isDead)
             {
-                score++;
+                datapass.score++;
                 countdownUI.ShowText("Passed!", 5);
                 DespawnBullets();
                 bulletsSpawned = false;
