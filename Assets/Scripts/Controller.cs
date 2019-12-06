@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     public float difficulty;
 
     public float innerRect;
+
+    bool bulletsSpawned = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +22,22 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!bulletsSpawned)
+        {
+            bulletsSpawned = true;
+            SpawnBullets(5);
+        }
     }
 
-    void SpawnBullets()
+    void SpawnBullets(int count)
     {
         Vector3 top = camera.ViewportToWorldPoint(new Vector3(1, 1, 10));
         Vector3 bottom = camera.ViewportToWorldPoint(new Vector3(0, 0, 10));
 
-        GeneratePath(top, bottom);
+        for(int i=0; i<count; i++)
+        {
+            GeneratePath(top, bottom);
+        }
     }
 
     void GeneratePath(Vector3 top, Vector3 bottom)
@@ -46,19 +55,19 @@ public class Controller : MonoBehaviour
         Vector3 diff = refPoint - point1;
         float rightDiff = diff.x / direction.x;
         float leftDiff = diff.y / direction.y;
-        float lamdba = leftDiff;
+        float lambda = leftDiff;
         if (Mathf.Abs(rightDiff) < Mathf.Abs(leftDiff))
         {
-            lamdba = rightDiff;
+            lambda = rightDiff;
         }
-        lamdba *= 1.1f;
-        if((direction * (lamdba+1) + point1).magnitude > (direction * lamdba + point1).magnitude)
-        {
-            lamdba *= -1;
-        }
-        generatedObj = Instantiate(bulletPre, direction * lamdba + point1, Quaternion.identity);
+        lambda *= 1.2f;
+        generatedObj = Instantiate(bulletPre, direction * lambda + point1, Quaternion.identity);
         Bullet bulletScript = generatedObj.GetComponent<Bullet>();
 
+        if ((direction * (lambda + 1) + point1).magnitude > (direction * lambda + point1).magnitude)
+        {
+            direction *= -1;
+        }
         bulletScript.direction = direction;
         bullets.Add(bulletScript);
     }
