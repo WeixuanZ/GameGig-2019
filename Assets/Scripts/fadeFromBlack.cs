@@ -1,21 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine;
 
 public class fadeFromBlack : MonoBehaviour
 {
     public float FadeSpeed = 2f;
 
-    Image img;
-    // Start is called before the first frame update
+    private Image img;
+
     void Start()
     {
         img = this.GetComponent<Image>();
-        this.GetComponent<RectTransform>().localScale = new Vector2(Screen.width, Screen.height);
+        img.color = Color.black;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (img.color.a >= 0.05f)
@@ -25,6 +22,8 @@ public class fadeFromBlack : MonoBehaviour
         else
         {
             img.color = Color.clear;
+            Cursor.visible = true;
+            this.enabled = false;
         }
     }
 }

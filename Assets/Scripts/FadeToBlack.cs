@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
@@ -10,7 +9,7 @@ public class FadeToBlack : MonoBehaviour
 
     void Start()
     {
-        img = GetComponent<Image>();
+        img = this.GetComponent<Image>();
         img.color = Color.clear;
     }
 
@@ -23,7 +22,7 @@ public class FadeToBlack : MonoBehaviour
         else
         {
             img.color = Color.black;
-            enabled = false;
+            this.enabled = false;
         }
     }
 }
