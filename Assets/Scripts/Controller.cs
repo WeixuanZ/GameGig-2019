@@ -23,6 +23,8 @@ public class Controller : MonoBehaviour
     int countdownNumber = 0;
     bool bulletsSpawned = false;
 
+    string[] RewardText = {"Neat", "Nice", "Well done", "Dope", "Great Job", "Keep it up", "Sweet", "Awesome", "Superhot"};
+
     void Start()
     {
         Cursor.visible = false;
@@ -32,7 +34,6 @@ public class Controller : MonoBehaviour
         datapass.score = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeSinceStart += Time.deltaTime;
@@ -60,7 +61,7 @@ public class Controller : MonoBehaviour
             if(countdown < -10 && !isDead)
             {
                 datapass.score++;
-                countdownUI.ShowText("Passed!", 5);
+                countdownUI.ShowText(this.GetRewardText(), 5);
                 DespawnBullets();
                 bulletsSpawned = false;
                 countdown = 3;
@@ -80,10 +81,12 @@ public class Controller : MonoBehaviour
             bulletSpeed = SpeedCurve(countdown) * 30;
         }
     }
+
     float DifficultyCurve(float t)
     {
         return Mathf.Log10(t + 3) / 1.2f + 1.5f;
     }
+
     float SpeedCurve(float t)
     {
         return Mathf.Exp((t - 1)) - 0.366f;
@@ -140,11 +143,18 @@ public class Controller : MonoBehaviour
         bulletScript.direction = direction;
         bullets.Add(bulletScript);
     }
+
     Vector3 GenerateRandomOffset(Vector3 range)
     {
         Vector3 offset = range * innerRect;
         offset.x *= Random.value;
         offset.y *= Random.value;
         return offset;
+    }
+
+    string GetRewardText()
+    {
+        int i = Random.Range(0, RewardText.Length - 1);
+        return this.RewardText[i];
     }
 }
