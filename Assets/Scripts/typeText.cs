@@ -11,7 +11,6 @@ public class typeText : MonoBehaviour
         this.GetComponent<InputField>().onValueChanged.AddListener(delegate { ValueChangeCheck(); });
         this.GetComponent<InputField>().ActivateInputField();
         this.GetComponent<InputField>().Select();
-        this.GetComponent<InputField>().navigation 
     }
 
 
