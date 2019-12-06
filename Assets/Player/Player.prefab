@@ -4891,6 +4891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionHandle: {fileID: 8152559484826904082}
+  BodyHandle: {fileID: 2335168484766438891}
 --- !u!1 &2335168484766438677
 GameObject:
   m_ObjectHideFlags: 0
