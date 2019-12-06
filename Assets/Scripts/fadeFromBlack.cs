@@ -15,6 +15,9 @@ public class fadeFromBlack : MonoBehaviour
 
     void Update()
     {
+        if (img.color.a >= 0.50f)
+            Cursor.visible = true;
+
         if (img.color.a >= 0.05f)
         {
             img.color = Color.Lerp(img.color, Color.clear, FadeSpeed * Time.deltaTime);
@@ -22,7 +25,6 @@ public class fadeFromBlack : MonoBehaviour
         else
         {
             img.color = Color.clear;
-            Cursor.visible = true;
             this.enabled = false;
         }
     }
