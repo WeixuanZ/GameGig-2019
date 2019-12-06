@@ -13,5 +13,6 @@ public class sceneData : MonoBehaviour
         if(GameObject.FindGameObjectsWithTag("persistent").Length > 1) {
             Destroy(this);
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 }
