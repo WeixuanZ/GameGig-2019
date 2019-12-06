@@ -33,7 +33,7 @@ public class typeText : MonoBehaviour
                 {
                     currentString += " ";
                 }
-                if(vKey.ToString() == "Enter")
+                if(vKey.ToString() == "Return")
                 {
                     SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
                 }
