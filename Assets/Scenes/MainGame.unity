@@ -234,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starPre: {fileID: 4413159373051858466, guid: 0fcecad27c043df4e99d90f85f3a146a, type: 3}
   cam: {fileID: 184056328}
+  scrollSpeed: 30
 --- !u!4 &225419973
 Transform:
   m_ObjectHideFlags: 0
