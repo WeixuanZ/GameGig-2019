@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         SpawnBullets();
     }
 
@@ -26,10 +28,16 @@ public class Controller : MonoBehaviour
 
         Instantiate(bullet, top, Quaternion.identity);
         Instantiate(bullet, bottom, Quaternion.identity);
+
+        GeneratePath(top, bottom);
     }
 
     void GeneratePath(Vector3 top, Vector3 bottom)
     {
+        Vector3 range = top - bottom;
+        Vector3 offset = range*(1-innerRect)*Random.value;
+        Vector3 point = top + offset + range* innerRect;
 
+        Debug.Log(point);
     }
 }
