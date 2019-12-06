@@ -84,9 +84,10 @@ public class Controller : MonoBehaviour
 
     void DespawnBullets()
     {
-        for(int i=0; i<bullets.Count; i++)
+        for(int i= bullets.Count-1; i>=0; i--)
         {
-            DestroyImmediate(bullets[i]);
+            Destroy(bullets[i].gameObject);
+            bullets.RemoveAt(i);
         }
     }
 
