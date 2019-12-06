@@ -41,7 +41,6 @@ public class getScores : MonoBehaviour
             {
                 playerScores[i].name = input.currentString;
             }
-            Debug.Log(names.transform);
             namesText[i].text = playerScores[i].name;
             scoresText[i].text = playerScores[i].score.ToString();
         }

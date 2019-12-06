@@ -15,13 +15,22 @@ public class typeText : MonoBehaviour
         {
             if (Input.GetKeyDown(vKey))
             {
+                if (vKey.ToString() == "Backspace" && currentString.Length > 0)
+                {
+                    currentString = currentString.Substring(0, currentString.Length - 1);
+                }
+
+                if (currentString.Length > 9)
+                {
+                    continue;
+                }
                 if(vKey.ToString().Length == 1)
                 {
                     currentString += vKey.ToString();
                 }
-                if(vKey.ToString() == "Backspace" && currentString.Length > 0)
+                if(vKey.ToString() == "Space")
                 {
-                    currentString = currentString.Substring(0, currentString.Length - 1);
+                    currentString += " ";
                 }
                 scoreDrawer.UpdateScoreboard();
             }
