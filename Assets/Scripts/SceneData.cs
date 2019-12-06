@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SceneData : MonoBehaviour
 {
-    public string name = "";
+    public string Name = "";
     public int score = 0;
     public bool fromGame = false;
 
