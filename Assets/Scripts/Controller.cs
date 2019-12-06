@@ -27,11 +27,12 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bulletsSpawned)
+        countdown -= Time.deltaTime * difficulty;
+        if (bulletsSpawned)
         {
-            countdown -= Time.deltaTime * difficulty;
-            if(countdown < -2)
+            if(countdown < -2 + countdownNumber)
             {
+                Debug.Log(countdownNumber);
                 if (countdownNumber > -3)
                 {
                     countdownUI.ShowText((3 + countdownNumber).ToString(), 5);
@@ -46,25 +47,40 @@ public class Controller : MonoBehaviour
                 }
                 countdownNumber--;
             }
+            if(countdown < -10)
+            {
+                countdownUI.ShowText("Passed!", 5);
+                DespawnBullets();
+                bulletsSpawned = false;
+                countdown = 3;
+            }
             if(countdown < 0)
             {
                 return;
             }
-            bulletSpeed = SpeedCurve(countdown)*10;
+            bulletSpeed = SpeedCurve(countdown)*30;
         }
-        else
+        else if(countdown<0)
         {
             countdownNumber = 0;
             bulletsSpawned = true;
             SpawnBullets(5);
             countdown = bulletMoveTime;
-            bulletSpeed = SpeedCurve(countdown) * 10;
+            bulletSpeed = SpeedCurve(countdown) * 30;
         }
     }
 
     float SpeedCurve(float t)
     {
-        return Mathf.Exp((t - 1)) - 0.368f;
+        return Mathf.Exp((t - 1)) - 0.366f;
+    }
+
+    void DespawnBullets()
+    {
+        for(int i=0; i<bullets.Count; i++)
+        {
+            DestroyImmediate(bullets[i]);
+        }
     }
 
     void SpawnBullets(int count)
@@ -98,7 +114,6 @@ public class Controller : MonoBehaviour
         {
             lambda = rightDiff;
         }
-        lambda *= 1.2f;
         generatedObj = Instantiate(bulletPre, direction * lambda + point1, Quaternion.identity);
         Bullet bulletScript = generatedObj.GetComponent<Bullet>();
 
