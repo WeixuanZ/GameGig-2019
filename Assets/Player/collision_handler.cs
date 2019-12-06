@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class collision_handler : MonoBehaviour
 {
     public ParticleSystem ExplosionHandle;
     public Rigidbody2D BodyHandle;
     public SpriteRenderer SpriteHandle;
+    public Image FadeImage;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,6 +21,7 @@ public class collision_handler : MonoBehaviour
         ExplosionHandle.Play();
 
         StartCoroutine(FlashShip());
+        FadeImage.GetComponent<FadeToBlack>().enabled = true;
     }
 
     IEnumerator FlashShip()
