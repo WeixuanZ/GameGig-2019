@@ -17,6 +17,9 @@ public class Controller : MonoBehaviour
     public float bulletSpeed = 0;
     public float bulletMoveTime;
 
+    public AudioSource BigBeep;
+    public AudioSource SmallBeep;
+
     SceneData datapass;
     float timeSinceStart = 0;
     float countdown;
@@ -47,10 +50,12 @@ public class Controller : MonoBehaviour
                 if (countdownNumber > -3)
                 {
                     countdownUI.ShowText((3 + countdownNumber).ToString(), 5);
+                    this.SmallBeep.Play();
                 }
                 else if(countdownNumber == -3)
                 {
                     countdownUI.ShowText("Go", 5);
+                    this.BigBeep.Play();
                 }
                 else
                 {
