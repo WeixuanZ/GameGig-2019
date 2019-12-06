@@ -12,6 +12,8 @@ public class Controller : MonoBehaviour
 
     public float innerRect;
 
+    public float bulletSpeed = 0;
+    float countdown;
     bool bulletsSpawned = false;
     // Start is called before the first frame update
     void Start()
@@ -22,11 +24,30 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!bulletsSpawned)
+        if(bulletsSpawned)
         {
+            countdown -= Time.deltaTime;
+            if(countdown < 0)
+            {
+                return;
+            }
+            if(countdown < 0.2)
+            {
+                bulletSpeed = countdown*(1/0.2f);
+            }
+        }
+        else
+        {
+            bulletSpeed = 5;
             bulletsSpawned = true;
             SpawnBullets(5);
+            countdown = 0.5f;
         }
+    }
+
+    float SpeedCurve()
+    {
+        return -Mathf.Exp(2 * (countdown - 1)) + 2;
     }
 
     void SpawnBullets(int count)
@@ -68,6 +89,7 @@ public class Controller : MonoBehaviour
         {
             direction *= -1;
         }
+        bulletScript.controller = this;
         bulletScript.direction = direction;
         bullets.Add(bulletScript);
     }
