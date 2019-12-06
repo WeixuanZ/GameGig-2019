@@ -18,6 +18,7 @@ public class Controller : MonoBehaviour
     public float bulletMoveTime;
 
     SceneData datapass;
+    float timeSinceStart = 0;
     float countdown;
     int countdownNumber = 0;
     bool bulletsSpawned = false;
@@ -34,6 +35,9 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeSinceStart += Time.deltaTime;
+        difficulty = DifficultyCurve(timeSinceStart);
+        Debug.Log(difficulty);
         countdown -= Time.deltaTime * difficulty;
         if (bulletsSpawned)
         {
@@ -71,12 +75,15 @@ public class Controller : MonoBehaviour
         {
             countdownNumber = 0;
             bulletsSpawned = true;
-            SpawnBullets(5);
+            SpawnBullets(Mathf.FloorToInt(5+difficulty*3));
             countdown = bulletMoveTime;
             bulletSpeed = SpeedCurve(countdown) * 30;
         }
     }
-
+    float DifficultyCurve(float t)
+    {
+        return Mathf.Log10(t + 3) / 1.2f + 1.5f;
+    }
     float SpeedCurve(float t)
     {
         return Mathf.Exp((t - 1)) - 0.366f;

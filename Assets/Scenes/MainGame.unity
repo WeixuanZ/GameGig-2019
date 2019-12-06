@@ -384,7 +384,7 @@ MonoBehaviour:
   bulletPre: {fileID: 4601946385004034720, guid: eedc7190e4fd9324793643e97a86bfe8,
     type: 3}
   bullets: []
-  difficulty: 2
+  difficulty: 2.4
   innerRect: 0.5
   isDead: 0
   bulletSpeed: 0
