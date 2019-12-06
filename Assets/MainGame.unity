@@ -177,11 +177,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_RootOrder
@@ -201,19 +201,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 62c0f5ad21b994fd0bdd5fb14f3cc99e, type: 3}
       propertyPath: ShapeModule.radiusThickness
@@ -427,6 +427,7 @@ MonoBehaviour:
   bullets: []
   difficulty: 0
   innerRect: 0.5
+  bulletSpeed: 0
 --- !u!1 &1652927876
 GameObject:
   m_ObjectHideFlags: 0
