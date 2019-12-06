@@ -65,8 +65,9 @@ public class Controller : MonoBehaviour
             }
             if(countdown < -10 && !isDead)
             {
-                datapass.score++;
-                countdownUI.ShowText(this.GetRewardText(), 5);
+                datapass.score += 1;
+                datapass.score *= (int)Mathf.Pow(2.7182818284f, this.difficulty);
+                countdownUI.ShowText(this.GetRewardText() + "\n" + this.datapass.score, 5);
                 DespawnBullets();
                 bulletsSpawned = false;
                 countdown = 3;
