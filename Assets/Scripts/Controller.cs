@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Camera camera;
+    public CountDown countdownUI;
     public GameObject bulletPre;
     public List<Bullet> bullets;
 
@@ -13,7 +14,9 @@ public class Controller : MonoBehaviour
     public float innerRect;
 
     public float bulletSpeed = 0;
+    public float bulletMoveTime;
     float countdown;
+    int countdownNumber = 0;
     bool bulletsSpawned = false;
     // Start is called before the first frame update
     void Start()
@@ -26,28 +29,41 @@ public class Controller : MonoBehaviour
     {
         if(bulletsSpawned)
         {
-            countdown -= Time.deltaTime;
+            countdown -= Time.deltaTime * difficulty;
+            if(countdown < -(3-countdownNumber))
+            {
+                if (countdownNumber > -3)
+                {
+                    countdownUI.ShowText((3 + countdownNumber).ToString(), 5);
+                }
+                else if(countdownNumber == -3)
+                {
+                    countdownUI.ShowText("Go", 5);
+                }
+                else
+                {
+                    bulletSpeed = SpeedCurve(bulletMoveTime) * 100;
+                }
+                countdownNumber--;
+            }
             if(countdown < 0)
             {
                 return;
             }
-            if(countdown < 0.2)
-            {
-                bulletSpeed = countdown*(1/0.2f);
-            }
+            bulletSpeed = SpeedCurve(countdown)*10;
         }
         else
         {
-            bulletSpeed = 5;
             bulletsSpawned = true;
             SpawnBullets(5);
-            countdown = 0.5f;
+            countdown = bulletMoveTime;
+            bulletSpeed = SpeedCurve(countdown) * 10;
         }
     }
 
-    float SpeedCurve()
+    float SpeedCurve(float t)
     {
-        return -Mathf.Exp(2 * (countdown - 1)) + 2;
+        return Mathf.Exp((t - 1)) - 0.368f;
     }
 
     void SpawnBullets(int count)
