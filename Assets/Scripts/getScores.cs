@@ -12,7 +12,7 @@ public class getScores : MonoBehaviour
 
     SceneData sceneData;
     List<PlayerData> playerScores;
-    int scoreIndex = 0;
+    int scoreIndex = -1;
     void Start()
     {
         sceneData = GameObject.FindGameObjectWithTag("persistent").GetComponent<SceneData>();
@@ -23,7 +23,8 @@ public class getScores : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            if(playerScores[i].score <= sceneData.score)
+            if(!sceneData.fromGame) break;
+            if (playerScores[i].score <= sceneData.score)
             {
                 namesFlash[i].enabled = true;
                 scoresFlash[i].enabled = true;
@@ -71,7 +72,7 @@ public class getScores : MonoBehaviour
         List<PlayerData> playerScores = new List<PlayerData>();
         for(int i=0; i<5; i++) {
             int score = 0;
-            string name = "UNKNOWN PLAYER";
+            string name = "???";
             if (PlayerPrefs.HasKey("Score_" + i.ToString()))
             {
                 score = PlayerPrefs.GetInt("Score_" + i.ToString());

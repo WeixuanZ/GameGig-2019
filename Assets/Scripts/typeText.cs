@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class typeText : MonoBehaviour
@@ -31,6 +32,10 @@ public class typeText : MonoBehaviour
                 if(vKey.ToString() == "Space")
                 {
                     currentString += " ";
+                }
+                if(vKey.ToString() == "Enter")
+                {
+                    SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
                 }
                 scoreDrawer.UpdateScoreboard();
             }
