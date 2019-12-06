@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class sceneData : MonoBehaviour
+public class SceneData : MonoBehaviour
 {
-    public string lastName = "";
-    public int lastScore = 0;
+public string name = "";
+public int score = 0;
+public bool fromGame = false;
 
-    void Start()
-    {
-        if(GameObject.FindGameObjectsWithTag("persistent").Length > 1) {
-            Destroy(this);
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
+void Start()
+{
+if(GameObject.FindGameObjectsWithTag("persistent").Length > 1) {
+Destroy(this);
+}
+DontDestroyOnLoad(this.gameObject);
+}
 }
