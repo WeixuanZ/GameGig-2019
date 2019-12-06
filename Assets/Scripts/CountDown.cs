@@ -20,6 +20,7 @@ public class CountDown : MonoBehaviour
 
     void ShowNumber(int number, float speed)
     {
+
         this.GetComponent<Text>().text = number.ToString();
     }
 }
