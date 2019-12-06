@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 45a10a04838d15e419c0650e5b65d459
+guid: 7d3ca34f9fdddd943afc15edc28e4484
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: FUTURISTIC
+  fontName: cyberspace
   fontNames:
-  - FUTURISTIC
+  - cyberspace
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
