@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    public Camera camera;
+    public Camera cam;
     public CountDown countdownUI;
     public GameObject bulletPre;
     public List<Bullet> bullets;
@@ -69,8 +69,8 @@ public class Controller : MonoBehaviour
 
     void SpawnBullets(int count)
     {
-        Vector3 top = camera.ViewportToWorldPoint(new Vector3(1, 1, 10));
-        Vector3 bottom = camera.ViewportToWorldPoint(new Vector3(0, 0, 10));
+        Vector3 top = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1, 10));
+        Vector3 bottom = GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0, 10));
 
         for(int i=0; i<count; i++)
         {

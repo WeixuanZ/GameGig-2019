@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6dc507c944183f46921c18ba9a5e395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 184056328}
+  cam: {fileID: 184056328}
   countdownUI: {fileID: 954154839}
   bulletPre: {fileID: 2443080174943469542, guid: 272965a7e6e7c064fb7fea9e9d4228f3,
     type: 3}
