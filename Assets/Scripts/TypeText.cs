@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class typeText : MonoBehaviour
+public class TypeText : MonoBehaviour
 {
-    public getScores scoreDrawer;
+    public GetScores scoreDrawer;
     public string currentString = "";
     // Start is called before the first frame update
 
