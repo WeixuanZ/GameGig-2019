@@ -4,11 +4,11 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class getScores : MonoBehaviour
+public class GetScores : MonoBehaviour
 {
     public GameObject names;
     public GameObject scores;
-    public typeText input;
+    public TypeText input;
 
     SceneData sceneData;
     List<PlayerData> playerScores;
