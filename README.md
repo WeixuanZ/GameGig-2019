@@ -2,10 +2,10 @@
 
 Our submission for the GameGig-2019 Hackathon
 
-![Main Menu](Screenshots/main_menu.jpg)
-![Game Play](Screenshots/in_game1.jpg)
-![Goal](Screenshots/mission.jpg)
-![Credits](Screenshots/credits.jpg)
+![Main Menu](Screenshots/main_menu.png)
+![Game Play](Screenshots/in_game1.png)
+![Goal](Screenshots/mission.png)
+![Credits](Screenshots/credits.png)
 
 ## Inspiration
 We were inspired by various bullet hells, space invaders, and Superhot. The general concept was for time to freeze giving the player a limited amount of time to see all the bullets at the edge of the screen and predict their trajectories. In this time, they should try to move to a safe space before all projectiles simultaneously rocket across the screen as the countdown reaches 0.
